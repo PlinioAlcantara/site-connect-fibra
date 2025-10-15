@@ -8,7 +8,6 @@ header {
   animation: slideDown 0.8s ease;
 }
 
-/* Animação */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -20,9 +19,6 @@ header {
   }
 }
 
-/* ------------------------- */
-/* 🔹 Navbar principal */
-/* ------------------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -33,18 +29,12 @@ header {
   letter-spacing: 0.5px;
 }
 
-/* ------------------------- */
-/* 🔸 Interações visuais */
-/* ------------------------- */
-
-/* Aplica cursor pointer para todos os elementos interativos */
 .nav-links li a,
 .menu-icon,
 .logo img {
   cursor: pointer;
 }
 
-/* Logo */
 .logo img {
   width: 150px;
   transition: transform 0.3s ease;
@@ -54,11 +44,11 @@ header {
   transform: scale(1.05);
 }
 
-/* Links do menu */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -73,9 +63,25 @@ header {
   transform: scale(1.05);
 }
 
-/* ------------------------- */
-/* 📱 Menu mobile */
-/* ------------------------- */
+
+.btn-central {
+  background-color: #001AFF;
+  color: #FFD700;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-central:hover {
+  background-color: #001AFF;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -110,5 +116,9 @@ header {
 
   .nav-links li {
     margin: 10px 0;
+  }
+
+  .btn-central {
+    margin-top: 10px;
   }
 }
