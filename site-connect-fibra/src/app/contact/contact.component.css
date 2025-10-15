@@ -1,0 +1,30 @@
+#section4 {
+  background-color: #001AFF;
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+  animation: fadeBackground 1s ease;
+}
+
+#section4 h2 {
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.social-icons a {
+  font-size: 36px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFD700;
+  transform: scale(1.1);
+}

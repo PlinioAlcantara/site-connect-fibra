@@ -1,0 +1,140 @@
+/* ------------------------- */
+/* 🌐 CONFIGURAÇÕES GERAIS */
+/* ------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ------------------------- */
+/* ⚙️ FONTES TECNOLÓGICAS */
+/* ------------------------- */
+:root {
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+}
+
+/* ------------------------- */
+/* 🧱 LAYOUT BASE */
+/* ------------------------- */
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* ------------------------- */
+/* 🎞️ ANIMAÇÕES */
+/* ------------------------- */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-bg {
+  animation: fadeBackground 1s ease;
+}
+
+@keyframes fadeBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------- */
+/* 🔹 ESPAÇAMENTO INTERNO */
+/* ------------------------- */
+button,
+img,
+ul {
+  margin-top: 20px;
+}
+
+.plan,
+.reason-card {
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  margin-top: 40px;
+  gap: 30px;
+}
+
+footer {
+  padding: 60px 20px;
+}
+
+.footer-content > div {
+  margin-bottom: 20px;
+}
+
+/* ------------------------- */
+/* 📱 RESPONSIVIDADE */
+/* ------------------------- */
+@media (max-width: 1024px) {
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+}

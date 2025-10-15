@@ -1,0 +1,35 @@
+#section3 {
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  padding: 80px 0;
+  animation: fadeBackground 1s ease;
+}
+
+.reasons-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.reason-card {
+  background-color: #ffffff;
+  border: 2px solid #00E0FF;
+  border-radius: 10px;
+  padding: 40px 25px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.reason-card h3 {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reason-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}

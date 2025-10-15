@@ -1,0 +1,18 @@
+<div class="carousel">
+  <div
+    class="carousel-images"
+    [ngStyle]="{ 'transform': 'translateX(' + (-100 * currentIndex) + '%)' }"
+  >
+    <img *ngFor="let img of images" [src]="img" alt="Promoção" />
+  </div>
+
+  <!-- Indicadores -->
+  <div class="carousel-dots">
+    <span
+      *ngFor="let img of images; let i = index"
+      class="dot"
+      [class.active]="i === currentIndex"
+      (click)="currentIndex = i"
+    ></span>
+  </div>
+</div>
