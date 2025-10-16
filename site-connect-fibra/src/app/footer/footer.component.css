@@ -1,66 +1,125 @@
+/* ------------------------- */
+/* 🔹 FOOTER BASE */
+/* ------------------------- */
 footer {
-  background-color: #00E0FF;
-  color: #000;
-  padding: 70px 30px;
-  display: flex;
-  justify-content: center;
-  animation: fadeBackground 1s ease;
+  background-color: #00E0FF; /* mesmo tom do header */
+  color: white;
+  padding: 60px 20px 25px;
+  font-family: var(--font-text);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ------------------------- */
+/* 🧱 CONTEÚDO PRINCIPAL */
+/* ------------------------- */
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
   gap: 40px;
-  font-family: var(--font-body);
+  margin-bottom: 25px;
 }
 
-.logo-footer img {
+/* ------------------------- */
+/* 🔹 LOGO */
+/* ------------------------- */
+.footer-logo img {
   width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-.contact-info {
-  text-align: center;
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------- */
+/* 📞 REDES SOCIAIS */
+/* ------------------------- */
+.footer-info p {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-family: var(--font-title);
+  color: #ffffff;
+}
+
+.footer-socials a {
+  color: white;
+  font-size: 1.6rem;
+  margin: 0 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+/* ------------------------- */
+/* 📱 SEÇÃO DE DOWNLOAD */
+/* ------------------------- */
+.footer-apps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.download-text {
+  font-family: var(--font-title);
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .app-links {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.app-links img {
-  width: 140px;
-  border-radius: 8px;
+.app-item img {
+  width: 160px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-info button {
-  background-color: #FFD700;
-  padding: 10px 20px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.contact-info button:hover {
-  background-color: #ffcc00;
+.app-item img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
+/* ------------------------- */
+/* ⚙️ RODAPÉ INFERIOR */
+/* ------------------------- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ------------------------- */
+/* 📱 RESPONSIVIDADE */
+/* ------------------------- */
+@media (max-width: 900px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
-    gap: 24px;
+    align-items: center;
   }
 
-  .app-links {
-    justify-content: center;
+  .footer-logo img {
+    width: 100px;
+  }
+
+  .app-item img {
+    width: 140px;
   }
 }

@@ -1,29 +1,14 @@
 <header>
-  <nav class="navbar container">
+  <nav class="navbar">
     <div class="logo">
-      <img src="assets/logo.png" alt="Logo da empresa" />
+      <img src="assets/images/logo-connect.png" alt="Connect Fibra Logo" />
     </div>
-
-    <!-- Checkbox para menu mobile -->
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
     <ul class="nav-links">
-      <li><a (click)="scrollToSection('section1')">Home</a></li>
-      <li><a (click)="scrollToSection('section2')">Planos</a></li>
-      <li><a (click)="scrollToSection('section3')">Motivos</a></li>
-      <li><a (click)="scrollToSection('section4')">Contato</a></li>
-
-      <!-- Novo botão -->
-      <li>
-        <a
-          href="https://api.connectcomercio.hubsoft.com.br/"
-          target="_blank"
-          class="btn-central"
-        >
-          Central do Cliente
-        </a>
-      </li>
+      <li><a href="#section1" (click)="scrollToSection('section1')">Home</a></li>
+      <li><a href="#section2" (click)="scrollToSection('section2')">Planos</a></li>
+      <li><a href="#section3" (click)="scrollToSection('section3')">Motivos</a></li>
+      <li><a href="#section4" (click)="scrollToSection('section4')">Contato</a></li>
+      <li><a href="https://api.connectcomercio.hubsoft.com.br/" target="_blank" class="btn-central">Central do Cliente</a></li>
     </ul>
   </nav>
 </header>

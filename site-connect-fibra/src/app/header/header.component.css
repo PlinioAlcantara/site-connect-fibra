@@ -1,3 +1,6 @@
+/* ------------------------- */
+/* 🔹 HEADER / NAVBAR */
+/* ------------------------- */
 header {
   background-color: #00E0FF;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -6,8 +9,10 @@ header {
   z-index: 1000;
   width: 100%;
   animation: slideDown 0.8s ease;
+  padding: 6px 0; /* 🔹 reduz a altura geral do header */
 }
 
+/* 🔹 Animação de entrada */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -19,43 +24,55 @@ header {
   }
 }
 
+/* ------------------------- */
+/* 🌐 NAVBAR */
+/* ------------------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 8px 20px; /* 🔹 menos padding vertical */
   font-family: var(--font-title);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
+/* 🔹 Cursor pointer em elementos clicáveis */
 .nav-links li a,
 .menu-icon,
 .logo img {
   cursor: pointer;
 }
 
+/* ------------------------- */
+/* 🧩 LOGO */
+/* ------------------------- */
 .logo img {
-  width: 150px;
+  width: 110px; /* 🔹 reduzido para equilibrar o header */
+  height: auto;
   transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
+/* ------------------------- */
+/* 🔗 LINKS DE NAVEGAÇÃO */
+/* ------------------------- */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 28px;
   align-items: center;
 }
 
 .nav-links li a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .nav-links li a:hover {
@@ -63,28 +80,35 @@ header {
   transform: scale(1.05);
 }
 
-
+/* ------------------------- */
+/* 🟡 BOTÃO CENTRAL DO CLIENTE */
+/* ------------------------- */
 .btn-central {
   background-color: #001AFF;
   color: #FFD700;
-  padding: 10px 22px;
-  border-radius: 25px;
+  padding: 8px 18px; /* 🔹 botão mais compacto */
+  border-radius: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
   border: none;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .btn-central:hover {
-  background-color: #001AFF;
-  color: #ffffff;
+  background-color: #FFD700;
+  color: #001AFF;
   transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
+/* ------------------------- */
+/* 📱 MENU RESPONSIVO */
+/* ------------------------- */
 .menu-icon {
   display: none;
-  font-size: 28px;
+  font-size: 26px;
   color: white;
   cursor: pointer;
 }
@@ -100,14 +124,15 @@ header {
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 60px; /* 🔹 ajustado para novo tamanho do header */
     right: 0;
     width: 100%;
     background-color: #00E0FF;
     flex-direction: column;
     align-items: center;
     display: none;
-    padding: 20px 0;
+    padding: 15px 0;
+    gap: 18px;
   }
 
   #menu-toggle:checked ~ .nav-links {
@@ -115,10 +140,14 @@ header {
   }
 
   .nav-links li {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   .btn-central {
     margin-top: 10px;
+  }
+
+  .logo img {
+    width: 95px; /* 🔹 menor ainda em mobile */
   }
 }

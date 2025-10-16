@@ -1,7 +1,9 @@
-<section id="section3" class="fade-section">
-  <h2>Por que escolher nossa empresa?</h2>
+<section id="section3">
+  <h2>Por que escolher a Connect Fibra?</h2>
+
   <div class="reasons-list">
     <div class="reason-card" *ngFor="let reason of reasons">
+      <div class="icon">{{ reason.icon }}</div>
       <h3>{{ reason.title }}</h3>
       <p>{{ reason.description }}</p>
     </div>

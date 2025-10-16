@@ -1,16 +1,31 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';  
 
 @Component({
   selector: 'app-reasons',
   templateUrl: './reasons.component.html',
-  styleUrls: ['./reasons.component.css'] 
+  styleUrls: ['./reasons.component.css']
 })
 export class ReasonsComponent {
   reasons = [
-    { title: 'Qualidade de Serviço', description: 'Oferecemos serviços de internet de alta qualidade, com estabilidade e velocidade garantidas.' },
-    { title: 'Suporte 24/7', description: 'Nosso suporte técnico está disponível 24 horas por dia, 7 dias por semana, pronto para atender você.' },
-    { title: 'Planos Personalizados', description: 'Oferecemos planos flexíveis que se adaptam às suas necessidades e orçamento.' },
-    { title: 'Tecnologia de Ponta', description: 'Utilizamos equipamentos e tecnologias de última geração para garantir a melhor experiência.' }
+    {
+      icon: '⚡',
+      title: 'Conexão Ultrarrápida',
+      description: 'Navegue, assista e jogue sem interrupções com nossa fibra de alta performance.'
+    },
+    {
+      icon: '🔒',
+      title: 'Segurança e Estabilidade',
+      description: 'Tecnologia de ponta para garantir conexões seguras e estáveis 24h por dia.'
+    },
+    {
+      icon: '🤝',
+      title: 'Atendimento Humanizado',
+      description: 'Equipe preparada para te atender com rapidez, empatia e eficiência.'
+    },
+    {
+      icon: '🌎',
+      title: 'Cobertura em Expansão',
+      description: 'Estamos constantemente conectando novas regiões, levando mais fibra até você.'
+    }
   ];
 }

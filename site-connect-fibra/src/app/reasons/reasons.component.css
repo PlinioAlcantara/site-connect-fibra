@@ -1,35 +1,140 @@
+/* ------------------------- */
+/* 🌐 SEÇÃO REASONS */
+/* ------------------------- */
 #section3 {
-  background-color: #ffffff;
-  color: #000;
+  background-color: #f4f7ff;
+  color: #333;
+  padding: 80px 20px;
+  font-family: var(--font-text, 'Poppins', sans-serif);
   text-align: center;
-  padding: 80px 0;
-  animation: fadeBackground 1s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ✨ título */
+#section3 h2 {
+  font-size: 2rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+  color: #001AFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* ------------------------- */
+/* 🎴 CONTAINER DE REASONS */
+/* ------------------------- */
 .reasons-list {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 25px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
 }
 
+/* ------------------------- */
+/* 🧊 CARD MODERNO */
+/* ------------------------- */
 .reason-card {
-  background-color: #ffffff;
-  border: 2px solid #00E0FF;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
   padding: 40px 25px;
-  width: 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: var(--font-body);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardAppear 1.6s ease forwards;
+}
+
+.reason-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.reason-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.reason-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.reason-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/* ------------------------- */
+/* 🧠 CONTEÚDO */
+/* ------------------------- */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #001AFF;
+  user-select: none;
 }
 
 .reason-card h3 {
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #001AFF;
+  margin-bottom: 10px;
 }
 
+.reason-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ------------------------- */
+/* 💫 HOVER */
+/* ------------------------- */
 .reason-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------- */
+/* 🎞️ ANIMAÇÕES */
+/* ------------------------- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .reasons-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reason-card {
+    width: 90%;
+  }
 }
