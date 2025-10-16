@@ -27,3 +27,7 @@ export class PlansComponent implements AfterViewInit {
     this.planCards.forEach(card => observer.observe(card.nativeElement));
   }
 }
+
+  
+
+

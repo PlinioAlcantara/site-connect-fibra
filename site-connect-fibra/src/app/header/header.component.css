@@ -2,17 +2,17 @@
 /* 🔹 HEADER / NAVBAR */
 /* ------------------------- */
 header {
-  background-color: #00E0FF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #233380;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   animation: slideDown 0.8s ease;
-  padding: 6px 0; /* 🔹 reduz a altura geral do header */
+  padding: 4px 0; /* 🔹 altura geral mais compacta */
 }
 
-/* 🔹 Animação de entrada */
+/* Animação de entrada */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -31,13 +31,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px; /* 🔹 menos padding vertical */
+  padding: 6px 20px; /* 🔹 padding reduzido */
   font-family: var(--font-title);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* 🔹 Cursor pointer em elementos clicáveis */
+/* Cursor pointer em itens clicáveis */
 .nav-links li a,
 .menu-icon,
 .logo img {
@@ -48,13 +48,13 @@ header {
 /* 🧩 LOGO */
 /* ------------------------- */
 .logo img {
-  width: 110px; /* 🔹 reduzido para equilibrar o header */
+  width: 95px; /* 🔹 logo menor para diminuir altura */
   height: auto;
   transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
 /* ------------------------- */
@@ -63,8 +63,9 @@ header {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 24px;
   align-items: center;
+  margin: 0;
 }
 
 .nav-links li a {
@@ -86,7 +87,7 @@ header {
 .btn-central {
   background-color: #001AFF;
   color: #FFD700;
-  padding: 8px 18px; /* 🔹 botão mais compacto */
+  padding: 6px 16px; /* 🔹 botão mais fino */
   border-radius: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -100,7 +101,7 @@ header {
   background-color: #FFD700;
   color: #001AFF;
   transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 /* ------------------------- */
@@ -124,7 +125,7 @@ header {
 
   .nav-links {
     position: absolute;
-    top: 60px; /* 🔹 ajustado para novo tamanho do header */
+    top: 55px; /* 🔹 acompanha header menor */
     right: 0;
     width: 100%;
     background-color: #00E0FF;
@@ -148,6 +149,6 @@ header {
   }
 
   .logo img {
-    width: 95px; /* 🔹 menor ainda em mobile */
+    width: 85px; /* 🔹 menor ainda em mobile */
   }
 }
