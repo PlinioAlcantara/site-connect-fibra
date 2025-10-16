@@ -2,110 +2,143 @@
   background-color: #001AFF;
   color: white;
   padding: 80px 20px;
-  font-family: var(--font-text, 'Poppins', sans-serif);
+  font-family: var(--font-text);
   text-align: center;
   overflow: hidden;
-}
-
-#section2 h2 {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: x-large;
 }
 
 .plans {
   display: flex;
-  justify-content: center; /* centraliza os cards */
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
+/* ---------- CARTÃO BASE ---------- */
 .plan {
   background-color: #ffffff;
   color: #000;
-  padding: 35px 25px;
+  padding: 40px 25px;
   border-radius: 14px;
   text-align: center;
-  width: 300px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 320px;
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(50px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
+/* Quando entra na tela */
 .plan.animate {
-  animation: cardReveal 1.8s ease forwards;
-}
-
-.plan.animate:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.plan.animate:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.plan.animate:nth-child(3) {
-  animation-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .plan:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 224, 255, 0.3);
 }
 
+/* ---------- TEXTO ---------- */
 .plan h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #001AFF;
+  margin-bottom: 10px;
+}
+
+.plan .beneficio {
+  font-weight: 600;
+  color: #007fff;
+  margin-bottom: 15px;
+}
+
+.plan .assinatura {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.plan ul li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* ---------- PREÇO E BOTÃO ---------- */
+.plan .preco {
+  font-size: 1.5rem;
   font-weight: 700;
   color: #001AFF;
   margin-bottom: 15px;
 }
 
-.plan p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  color: #333;
-}
-
 .plan button {
-  padding: 12px 32px;
-  background-color: #FFD700;
+  padding: 12px 30px;
+  background-color: #00E0FF;
   color: #001AFF;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .plan button:hover {
-  background-color: #001AFF;
-  color: white;
+  background-color: #FFD700;
+  color: #001AFF;
   transform: scale(1.05);
 }
 
-@keyframes cardReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(60px) scale(0.96);
-  }
-  50% {
-    opacity: 0.6;
-    transform: translateY(-5px) scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* ---------- PLANO DESTAQUE ---------- */
+.plan.destaque {
+  border: 3px solid #FFD700;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
 }
 
-@media (max-width: 900px) {
+.plan.destaque::before {
+  content: "Mais popular ⭐";
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: #FFD700;
+  color: #001AFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 1024px) {
   .plans {
-    flex-direction: column;
+    gap: 20px;
   }
 
   .plan {
-    width: 85%;
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    width: 90%;
+    max-width: 350px;
   }
 }
