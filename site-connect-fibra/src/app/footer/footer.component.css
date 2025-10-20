@@ -53,6 +53,27 @@ footer {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* 🔹 Texto do número 0800 ao lado do ícone */
+.footer-socials a span {
+  margin-left: 6px;           /* espaçamento entre ícone e texto */
+  font-size: 0.85rem;         /* texto um pouco menor */
+  font-weight: 500;
+  color: #ffffff;
+  vertical-align: middle;
+}
+
+/* Hover: muda a cor suavemente */
+.footer-socials a[href^="tel"]:hover span {
+  color: #00E0FF;
+  transition: color 0.3s ease;
+}
+
+/* 🔹 Mantém alinhamento visual dos ícones */
+.footer-socials a i {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
 .footer-socials a:hover {
   color: #FFD700;
   transform: scale(1.2);

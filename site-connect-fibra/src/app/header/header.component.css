@@ -9,10 +9,9 @@ header {
   z-index: 1000;
   width: 100%;
   animation: slideDown 0.8s ease;
-  padding: 4px 0; /* 🔹 altura geral mais compacta */
+  padding: 4px 0;
 }
 
-/* Animação de entrada */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -24,31 +23,19 @@ header {
   }
 }
 
-/* ------------------------- */
-/* 🌐 NAVBAR */
-/* ------------------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 20px; /* 🔹 padding reduzido */
+  padding: 6px 20px;
   font-family: var(--font-title);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Cursor pointer em itens clicáveis */
-.nav-links li a,
-.menu-icon,
+/* 🔹 LOGO */
 .logo img {
-  cursor: pointer;
-}
-
-/* ------------------------- */
-/* 🧩 LOGO */
-/* ------------------------- */
-.logo img {
-  width: 95px; /* 🔹 logo menor para diminuir altura */
+  width: 95px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -57,9 +44,7 @@ header {
   transform: scale(1.06);
 }
 
-/* ------------------------- */
-/* 🔗 LINKS DE NAVEGAÇÃO */
-/* ------------------------- */
+/* 🔹 LINKS */
 .nav-links {
   display: flex;
   list-style: none;
@@ -81,13 +66,11 @@ header {
   transform: scale(1.05);
 }
 
-/* ------------------------- */
-/* 🟡 BOTÃO CENTRAL DO CLIENTE */
-/* ------------------------- */
+/* 🔹 BOTÃO CENTRAL DO CLIENTE */
 .btn-central {
   background-color: #001AFF;
   color: #FFD700;
-  padding: 6px 16px; /* 🔹 botão mais fino */
+  padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -98,26 +81,28 @@ header {
 }
 
 .btn-central:hover {
-  background-color: #FFD700;
-  color: #001AFF;
+  background-color: #001AFF;
+  color: #FFD700;
   transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 195, 255, 0.541);
 }
 
-/* ------------------------- */
-/* 📱 MENU RESPONSIVO */
-/* ------------------------- */
+/* 🔹 ÍCONE MENU MOBILE */
 .menu-icon {
   display: none;
   font-size: 26px;
   color: white;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-#menu-toggle {
-  display: none;
+.menu-icon:hover {
+  transform: scale(1.1);
 }
 
+/* ------------------------- */
+/* 📱 MOBILE */
+/* ------------------------- */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -125,23 +110,20 @@ header {
 
   .nav-links {
     position: absolute;
-    top: 55px; /* 🔹 acompanha header menor */
+    top: 60px;
     right: 0;
     width: 100%;
-    background-color: #00E0FF;
+    background-color: #233380;
     flex-direction: column;
     align-items: center;
     display: none;
-    padding: 15px 0;
-    gap: 18px;
+    padding: 20px 0;
+    gap: 20px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   }
 
-  #menu-toggle:checked ~ .nav-links {
+  .nav-links.active {
     display: flex;
-  }
-
-  .nav-links li {
-    margin: 8px 0;
   }
 
   .btn-central {
@@ -149,6 +131,6 @@ header {
   }
 
   .logo img {
-    width: 85px; /* 🔹 menor ainda em mobile */
+    width: 85px;
   }
 }

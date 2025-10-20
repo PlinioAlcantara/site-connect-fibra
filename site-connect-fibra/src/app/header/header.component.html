@@ -1,14 +1,26 @@
 <header>
   <nav class="navbar">
+    <!-- 🔹 LOGO -->
     <div class="logo">
       <img src="assets/images/LGO 2.png" alt="Connect Fibra Logo" />
     </div>
-    <ul class="nav-links">
-      <li><a href="#section1" (click)="scrollToSection('section1')">Home</a></li>
-      <li><a href="#section2" (click)="scrollToSection('section2')">Planos</a></li>
-      <li><a href="#section3" (click)="scrollToSection('section3')">Motivos</a></li>
-      <li><a href="#section4" (click)="scrollToSection('section4')">Contato</a></li>
-      <li><a href="https://api.connectcomercio.hubsoft.com.br/" target="_blank" class="btn-central">Central do Cliente</a></li>
+
+    <!-- 🔹 BOTÃO HAMBÚRGUER (visível só em telas pequenas) -->
+    <div class="menu-icon" (click)="toggleMenu()">
+      <i [class]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+    </div>
+
+    <!-- 🔹 LINKS DE NAVEGAÇÃO -->
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a href="#" (click)="scrollToSection('home'); closeMenu()">Home</a></li>
+      <li><a href="#section2" (click)="scrollToSection('section2'); closeMenu()">Planos</a></li>
+      <li><a href="#section3" (click)="scrollToSection('section3'); closeMenu()">Motivos</a></li>
+      <li><a href="#section4" (click)="scrollToSection('section4'); closeMenu()">Contato</a></li>
+      <li>
+        <a href="https://api.connectcomercio.hubsoft.com.br/" target="_blank" class="btn-central" (click)="closeMenu()">
+          Central do Cliente
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
