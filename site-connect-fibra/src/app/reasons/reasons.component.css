@@ -1,6 +1,3 @@
-/* ------------------------- */
-/* 🌐 SEÇÃO REASONS */
-/* ------------------------- */
 #section3 {
   background-color: #f4f7ff;
   color: #333;
@@ -11,7 +8,7 @@
   overflow: hidden;
 }
 
-/* ✨ título */
+
 #section3 h2 {
   font-size: 2rem;
   margin-bottom: 60px;
@@ -22,9 +19,6 @@
   position: relative;
 }
 
-/* ------------------------- */
-/* 🎴 CONTAINER DE REASONS */
-/* ------------------------- */
 .reasons-list {
   display: flex;
   justify-content: center;
@@ -36,9 +30,6 @@
   animation: fadeUp 1.2s ease forwards;
 }
 
-/* ------------------------- */
-/* 🧊 CARD MODERNO */
-/* ------------------------- */
 .reason-card {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
@@ -68,9 +59,6 @@
   animation-delay: 0.8s;
 }
 
-/* ------------------------- */
-/* 🧠 CONTEÚDO */
-/* ------------------------- */
 .icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -91,17 +79,11 @@
   line-height: 1.6;
 }
 
-/* ------------------------- */
-/* 💫 HOVER */
-/* ------------------------- */
 .reason-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* ------------------------- */
-/* 🎞️ ANIMAÇÕES */
-/* ------------------------- */
 @keyframes fadeUp {
   0% {
     opacity: 0;

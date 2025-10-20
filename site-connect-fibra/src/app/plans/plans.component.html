@@ -11,7 +11,9 @@
         <li>mediQuo</li>
       </ul>
       <p class="preco">R$ 89,90/mês</p>
-      <button>Assine agora</button>
+      <button (click)="abrirWhatsApp('600 MEGA')">
+        <i class="fab fa-whatsapp"></i> Assine agora
+      </button>
     </div>
 
     <!-- 🔹 PLANO 800 MEGA -->
@@ -27,7 +29,9 @@
         <li>mediQuo</li>
       </ul>
       <p class="preco">R$ 99,90/mês</p>
-      <button>Assine agora</button>
+      <button (click)="abrirWhatsApp('800 MEGA')">
+        <i class="fab fa-whatsapp"></i> Assine agora
+      </button>
     </div>
 
     <!-- 🔹 PLANO 1 GIGA -->
@@ -43,7 +47,10 @@
         <li>mediQuo</li>
       </ul>
       <p class="preco">R$ 149,90/mês</p>
-      <button>Assine agora</button>
+      <button (click)="abrirWhatsApp('1 GIGA')">
+        <i class="fab fa-whatsapp"></i> Assine agora
+      </button>
     </div>
+
   </div>
 </section>

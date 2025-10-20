@@ -1,8 +1,11 @@
+/* ------------------------- */
+/* 🧩 SEÇÃO DOS PLANOS */
+/* ------------------------- */
 #section2 {
   background-color: #267dc0;
   color: white;
-  padding: 0 20px 80px 20px; /* 🔹 remove padding-top */
-  margin-top: 0; /* 🔹 remove espaço extra entre as seções */
+  padding: 0 20px 80px 20px; /* remove padding-top */
+  margin-top: 0; /* remove espaço extra entre as seções */
   font-family: var(--font-text);
   text-align: center;
   overflow: hidden;
@@ -17,6 +20,9 @@
   margin-top: 40px;
 }
 
+/* ------------------------- */
+/* 📦 CARD DE PLANO */
+/* ------------------------- */
 .plan {
   background-color: #ffffff;
   color: #000;
@@ -41,6 +47,9 @@
   box-shadow: 0 10px 25px rgba(0, 224, 255, 0.3);
 }
 
+/* ------------------------- */
+/* 🏷️ CONTEÚDO */
+/* ------------------------- */
 .plan h3 {
   font-size: 2rem;
   font-weight: 700;
@@ -81,23 +90,37 @@
   margin-bottom: 15px;
 }
 
+/* ------------------------- */
+/* 💬 BOTÃO WHATSAPP */
+/* ------------------------- */
 .plan button {
   padding: 12px 30px;
-  background-color: #00E0FF;
-  color: #001AFF;
+  background-color: #00E676; /* verde WhatsApp */
+  color: #fff;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   transition: all 0.3s ease;
 }
 
 .plan button:hover {
-  background-color: #FFD700;
-  color: #001AFF;
+  background-color: #25D366; /* tom oficial do WhatsApp */
   transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
 }
 
+.plan button i {
+  font-size: 1.2rem;
+}
+
+/* ------------------------- */
+/* 🌟 PLANO DESTAQUE */
+/* ------------------------- */
 .plan.destaque {
   border: 3px solid #FFD700;
   background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
@@ -116,7 +139,9 @@
   border-radius: 30px;
 }
 
-/* 🔹 Responsividade */
+/* ------------------------- */
+/* 📱 RESPONSIVIDADE */
+/* ------------------------- */
 @media (max-width: 1024px) {
   .plans {
     gap: 20px;
@@ -137,4 +162,16 @@
     width: 90%;
     max-width: 350px;
   }
+
+  .plan button {
+    font-size: 0.95rem;
+  }
+}
+
+/* ------------------------- */
+/* ✨ ANIMAÇÃO OPCIONAL (efeito “pulse” no clique) */
+/* ------------------------- */
+.plan button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
 }

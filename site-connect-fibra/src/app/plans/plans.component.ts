@@ -16,18 +16,22 @@ export class PlansComponent implements AfterViewInit {
           if (entry.isIntersecting) {
             element.classList.add('animate');
           } else {
-            // Quando sai da tela, remove para permitir repetir
             element.classList.remove('animate');
           }
         });
       },
-      { threshold: 0.3 } // ativa quando 30% do card estiver visível
+      { threshold: 0.3 }
     );
 
     this.planCards.forEach(card => observer.observe(card.nativeElement));
   }
+
+  abrirWhatsApp(plano: string) {
+  const numero = '5583991616542';
+  const mensagem = `Olá! 👋 Gostaria de contratar o plano ${plano} da Connect Fibra.`;
+  const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+
+  // redireciona diretamente para o chat
+  window.location.href = url;
 }
-
-  
-
-
+}
