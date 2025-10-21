@@ -1,6 +1,3 @@
-/* ------------------------- */
-/* 🔹 HEADER / NAVBAR */
-/* ------------------------- */
 header {
   background-color: #233380;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -8,19 +5,7 @@ header {
   top: 0;
   z-index: 1000;
   width: 100%;
-  animation: slideDown 0.8s ease;
   padding: 4px 0;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .navbar {
@@ -29,84 +14,62 @@ header {
   align-items: center;
   padding: 6px 20px;
   font-family: var(--font-title);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-/* 🔹 LOGO */
 .logo img {
   width: 95px;
-  height: auto;
   transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
-/* 🔹 LINKS */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 24px;
   align-items: center;
-  margin: 0;
 }
 
 .nav-links li a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease;
   font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  color: #FFD700;
-  transform: scale(1.05);
+  color: var(--color-secondary);
 }
 
 /* 🔹 BOTÃO CENTRAL DO CLIENTE */
 .btn-central {
-  background-color: #001AFF;
-  color: #FFD700;
+  background-color: #001aff;
+  color: #ffd700;
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
-  letter-spacing: 0.5px;
   border: none;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .btn-central:hover {
-  background-color: #001AFF;
-  color: #FFD700;
   transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(0, 195, 255, 0.541);
+  box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
 }
 
-/* 🔹 ÍCONE MENU MOBILE */
+/* 🔹 MOBILE */
 .menu-icon {
   display: none;
   font-size: 26px;
   color: white;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.menu-icon:hover {
-  transform: scale(1.1);
-}
-
-/* ------------------------- */
-/* 📱 MOBILE */
-/* ------------------------- */
 @media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
+  .menu-icon { display: block; }
 
   .nav-links {
     position: absolute;
@@ -119,18 +82,9 @@ header {
     display: none;
     padding: 20px 0;
     gap: 20px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  .nav-links.active { display: flex; }
 
-  .btn-central {
-    margin-top: 10px;
-  }
-
-  .logo img {
-    width: 85px;
-  }
+  .btn-central { margin-top: 10px; }
 }

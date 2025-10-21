@@ -1,6 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+/* ------------------------------------------------------ */
+/* 🌐 FONTES E VARIÁVEIS GLOBAIS                          */
+/* ------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
 :root {
+  /* Paleta principal */
+  --color-primary: #267dc0;
+  --color-secondary: #FFD700;
+  --color-dark: #1b1b1b;
+  --color-light: #ffffff;
+  --color-gray: #f4f7ff;
+
+  /* Fontes */
   --font-title: 'Rajdhani', sans-serif;
   --font-text: 'Exo 2', sans-serif;
 }
 
+/* ------------------------------------------------------ */
+/* 🌐 RESET E BASE                                         */
+/* ------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: var(--font-text);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  transition: all 0.4s ease-in-out;
+  padding: 80px 0;
+}
+
+/* ------------------------------------------------------ */
+/* 🧠 TIPOGRAFIA GLOBAL                                   */
+/* ------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6, button {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+p {
+  font-family: var(--font-text);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------ */
+/* ✨ ANIMAÇÕES                                           */
+/* ------------------------------------------------------ */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------ */
+/* 📱 RESPONSIVIDADE GLOBAL                               */
+/* ------------------------------------------------------ */
+@media (max-width: 1024px) {
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

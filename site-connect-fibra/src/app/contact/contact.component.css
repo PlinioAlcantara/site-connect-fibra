@@ -1,30 +1,18 @@
-/* ------------------------- */
-/* 📞 SEÇÃO DE CONTATO */
-/* ------------------------- */
 #section4 {
   background-color: #f4f7ff;
-  color: var(--color-light);
+  color: #333;
   text-align: center;
   padding: 80px 20px;
-  animation: fadeBackground 1s ease;
-  font-family: var(--font-text); /* 🔹 fonte global */
-  
 }
 
-/* 🔹 TÍTULO */
 #section4 h2 {
   margin-bottom: 40px;
+  font-family: var(--font-title);
   font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: var(--font-title); /* 🔹 título segue padrão */
   font-weight: 700;
-  color: var(--color-light);
+  color: #333;
 }
 
-/* ------------------------- */
-/* 🔗 CONTAINER DE ÍCONES */
-/* ------------------------- */
 .contact-container {
   display: flex;
   justify-content: center;
@@ -36,12 +24,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 60px;
-  font-family: var(--font-text); /* 🔹 aplica Exo 2 nos textos */
 }
 
-/* ------------------------- */
-/* 💬 ITEM DE CONTATO */
-/* ------------------------- */
 .contact-item {
   display: flex;
   flex-direction: column;
@@ -52,80 +36,30 @@
 .contact-item i {
   font-size: 2.8rem;
   margin-bottom: 10px;
+  color: #333;
   transition: transform 0.3s ease;
-  color: var(--color-light);
 }
 
 .contact-item a {
-  color: var(--color-light);
-  font-size: 1.1rem;
+  color: #333;
+  font-family: var(--font-text);
   text-decoration: none;
   font-weight: 500;
-  font-family: var(--font-text);
-  letter-spacing: 0.3px;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
-/* Texto acima do 0800 */
-.contact-item .label {
-  font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-  color: rgba(255, 255, 255, 0.9);
-}
+.contact-item:hover i { transform: scale(1.15); }
 
-/* ------------------------- */
-/* 🟣 CORES DE HOVER */
-/* ------------------------- */
-.contact-item a[href*="instagram"]:hover {
-  color: #E1306C;
-}
+/* Hover cores específicas */
+.contact-item a[href*="instagram"]:hover { color: #E1306C; }
+.contact-item a[href*="wa.me"]:hover { color: #25D366; }
+.contact-item a[href*="hubsoft"]:hover { color: var(--color-secondary); }
+.contact-item a[href^="tel"]:hover { color: #00E0FF; }
 
-.contact-item a[href*="wa.me"]:hover {
-  color: #25D366;
-}
-
-.contact-item a[href*="hubsoft"]:hover {
-  color: var(--color-secondary);
-}
-
-.contact-item a[href^="tel"]:hover {
-  color: #00E0FF;
-}
-
-.contact-item:hover i {
-  transform: scale(1.15);
-}
-
-/* ------------------------- */
-/* 📱 RESPONSIVIDADE */
-/* ------------------------- */
+/* Responsividade */
 @media (max-width: 768px) {
-  .social-icons {
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .contact-item i {
-    font-size: 2.2rem;
-  }
-
-  .contact-item a {
-    font-size: 1rem;
-  }
-}
-
-/* ------------------------- */
-/* ✨ ANIMAÇÃO */
-/* ------------------------- */
-@keyframes fadeBackground {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .social-icons { flex-direction: column; gap: 35px; }
+  .contact-item i { font-size: 2.2rem; }
+  .contact-item a { font-size: 1rem; }
 }

@@ -2,22 +2,34 @@
 /* 🧩 SEÇÃO DOS PLANOS */
 /* ------------------------- */
 #section2 {
-  background-color: #267dc0;
+  background-color: var(--color-primary);
   color: white;
-  padding: 0 20px 80px 20px; /* remove padding-top */
-  margin-top: 0; /* remove espaço extra entre as seções */
-  font-family: var(--font-text);
+  padding: 80px 20px;
   text-align: center;
+  font-family: var(--font-text);
   overflow: hidden;
-  font-size: x-large;
 }
 
+/* 🔹 TÍTULO DA SEÇÃO */
+#section2 h2 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: #ffffff; /* ✅ mantém branco puro sobre o fundo azul */
+}
+
+/* ------------------------- */
+/* 📦 CONTAINER DOS PLANOS */
+/* ------------------------- */
 .plans {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* ------------------------- */
@@ -53,7 +65,7 @@
 .plan h3 {
   font-size: 2rem;
   font-weight: 700;
-  color: #267dc0;
+  color: var(--color-primary);
   margin-bottom: 10px;
 }
 
@@ -95,7 +107,7 @@
 /* ------------------------- */
 .plan button {
   padding: 12px 30px;
-  background-color: #00E676; /* verde WhatsApp */
+  background-color: #00E676;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -109,7 +121,7 @@
 }
 
 .plan button:hover {
-  background-color: #25D366; /* tom oficial do WhatsApp */
+  background-color: #25D366;
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
 }
@@ -163,14 +175,16 @@
     max-width: 350px;
   }
 
+  #section2 h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
   .plan button {
     font-size: 0.95rem;
   }
 }
 
-/* ------------------------- */
-/* ✨ ANIMAÇÃO OPCIONAL (efeito “pulse” no clique) */
-/* ------------------------- */
 .plan button:active {
   transform: scale(0.95);
   box-shadow: 0 0 5px rgba(37, 211, 102, 0.3);
