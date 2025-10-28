@@ -26,7 +26,7 @@ export class HeaderComponent {
 
     const target = document.getElementById(sectionId);
     if (target) {
-      const yOffset = -70; // compensa altura do header
+      const yOffset = -70; 
       const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
