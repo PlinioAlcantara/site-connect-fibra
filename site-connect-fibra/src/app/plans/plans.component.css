@@ -18,7 +18,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 40px;
-  color: #ffffff; /* ✅ mantém branco puro sobre o fundo azul */
+  color: #ffffff;
 }
 
 /* ------------------------- */
@@ -36,15 +36,19 @@
 /* 📦 CARD DE PLANO */
 /* ------------------------- */
 .plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔹 força o footer a ficar no final */
   background-color: #ffffff;
   color: #000;
   padding: 40px 25px;
   border-radius: 14px;
   text-align: center;
   width: 320px;
+  min-height: 520px; /* 🔹 altura uniforme */
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   position: relative;
 }
@@ -62,6 +66,10 @@
 /* ------------------------- */
 /* 🏷️ CONTEÚDO */
 /* ------------------------- */
+.plan-content {
+  flex-grow: 1; /* 🔹 faz o conteúdo expandir */
+}
+
 .plan h3 {
   font-size: 2rem;
   font-weight: 700;
@@ -86,13 +94,20 @@
 .plan ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .plan ul li {
   font-size: 0.95rem;
   margin-bottom: 6px;
   color: #333;
+}
+
+/* ------------------------- */
+/* 💰 RODAPÉ FIXO (PREÇO + BOTÃO) */
+/* ------------------------- */
+.plan-footer {
+  margin-top: 20px;
 }
 
 .plan .preco {
@@ -173,6 +188,7 @@
   .plan {
     width: 90%;
     max-width: 350px;
+    min-height: auto; /* 🔹 altura ajustável em telas menores */
   }
 
   #section2 h2 {

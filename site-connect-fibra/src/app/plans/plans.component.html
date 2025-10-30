@@ -1,56 +1,70 @@
 <section id="section2" class="fade-section">
   <h2>Nossos Planos</h2>
   <div class="plans">
-    
+
     <!-- 🔹 PLANO 600 MEGA -->
     <div class="plan" #planCard>
-      <h3>600 MEGA</h3>
-      <p class="beneficio">+ PONTO SMART</p>
-      <p class="assinatura">Assinaturas inclusas:</p>
-      <ul>
-        <li>mediQuo</li>
-      </ul>
-      <p class="preco">R$ 89,90/mês</p>
-      <button (click)="abrirWhatsApp('600 MEGA')">
-        <i class="fab fa-whatsapp"></i> Assine agora
-      </button>
+      <div class="plan-content">
+        <h3>600 MEGA</h3>
+        <p class="beneficio">+ PONTO SMART</p>
+        <p class="assinatura">Assinaturas inclusas:</p>
+        <ul>
+          <li>mediQuo</li>
+        </ul>
+      </div>
+
+      <div class="plan-footer">
+        <p class="preco">R$ 89,90/mês</p>
+        <button (click)="abrirWhatsApp('600 MEGA')">
+          <i class="fab fa-whatsapp"></i> Assine agora
+        </button>
+      </div>
     </div>
 
     <!-- 🔹 PLANO 800 MEGA -->
     <div class="plan" #planCard>
-      <h3>800 MEGA</h3>
-      <p class="beneficio">+ PONTO SMART</p>
-      <p class="assinatura">Assinaturas inclusas:</p>
-      <ul>
-        <li>Clube de Revistas</li>
-        <li>Coquetel</li>
-        <li>Watch TV</li>
-        <li>Paramount+</li>
-        <li>mediQuo</li>
-      </ul>
-      <p class="preco">R$ 99,90/mês</p>
-      <button (click)="abrirWhatsApp('800 MEGA')">
-        <i class="fab fa-whatsapp"></i> Assine agora
-      </button>
+      <div class="plan-content">
+        <h3>800 MEGA</h3>
+        <p class="beneficio">+ PONTO SMART</p>
+        <p class="assinatura">Assinaturas inclusas:</p>
+        <ul>
+          <li>Clube de Revistas</li>
+          <li>Coquetel</li>
+          <li>Watch TV</li>
+          <li>Paramount+</li>
+          <li>mediQuo</li>
+        </ul>
+      </div>
+
+      <div class="plan-footer">
+        <p class="preco">R$ 99,90/mês</p>
+        <button (click)="abrirWhatsApp('800 MEGA')">
+          <i class="fab fa-whatsapp"></i> Assine agora
+        </button>
+      </div>
     </div>
 
     <!-- 🔹 PLANO 1 GIGA -->
     <div class="plan destaque" #planCard>
-      <h3>1 GIGA</h3>
-      <p class="beneficio">ROTEADOR MESH + PONTO SMART</p>
-      <p class="assinatura">Assinaturas inclusas:</p>
-      <ul>
-        <li>TocaLivros</li>
-        <li>Coquetel</li>
-        <li>Watch TV</li>
-        <li>Paramount+</li>
-        <li>mediQuo</li>
-      </ul>
-      <p class="preco">R$ 149,90/mês</p>
-      <button (click)="abrirWhatsApp('1 GIGA')">
-        <i class="fab fa-whatsapp"></i> Assine agora
-      </button>
-    </div>
+      <div class="plan-content">
+        <h3>1 GIGA</h3>
+        <p class="beneficio">ROTEADOR MESH + PONTO SMART</p>
+        <p class="assinatura">Assinaturas inclusas:</p>
+        <ul>
+          <li>TocaLivros</li>
+          <li>Coquetel</li>
+          <li>Watch TV</li>
+          <li>Paramount+</li>
+          <li>mediQuo</li>
+        </ul>
+      </div>
 
+      <div class="plan-footer">
+        <p class="preco">R$ 149,90/mês</p>
+        <button (click)="abrirWhatsApp('1 GIGA')">
+          <i class="fab fa-whatsapp"></i> Assine agora
+        </button>
+      </div>
+    </div>
   </div>
 </section>

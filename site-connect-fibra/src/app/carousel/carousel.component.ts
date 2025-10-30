@@ -6,10 +6,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit, OnDestroy {
-  images: string[] = [
-    'assets/images/banner1.jpg',   // você sempre conectado
-    'assets/images/banner2.jpg',   // amigo indica amigo
-    'assets/images/banner3.jpg'    // pais conectados
+
+  images: { src: string; position: string }[] = [
+    { src: 'assets/images/sorteio.jpg', position: 'top center' }, 
+    { src: 'assets/images/banner1.1.jpg', position: 'top center' }, 
+    { src: 'assets/images/banner2.jpg', position: 'top center' }   
   ];
 
   currentIndex = 0;
@@ -18,7 +19,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.intervalId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    }, 5000); // troca a cada 5 segundos
+    }, 5000);
   }
 
   ngOnDestroy() {

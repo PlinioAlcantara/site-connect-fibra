@@ -2,8 +2,9 @@
   <div class="carousel-container">
     <img
       *ngFor="let img of images; let i = index"
-      [src]="img"
+      [src]="img.src"
       [class.active]="i === currentIndex"
+      [style.object-position]="img.position"
       alt="Banner promocional"
     />
   </div>

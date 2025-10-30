@@ -2,10 +2,10 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  background-color: transparent; /* ✅ remove fundo azul */
+  background-color: transparent;
   animation: fadeIntro 1s ease;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin: 0; /* 🔹 encosta no header */
+  padding: 0;
 }
 
 @keyframes fadeIntro {
@@ -16,20 +16,22 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  aspect-ratio: 16 / 6; /* 🔹 define proporção equilibrada (ajusta automaticamente a altura) */
 }
 
 .carousel-container img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  transform: translate(-50%, -50%);
+  object-fit: contain; /* 🔹 mostra a imagem inteira */
+  object-position: center center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
   border: none;
+  background-color: #f4f7ff; /* 🔹 evita bordas pretas */
 }
 
 .carousel-container img.active {
@@ -39,16 +41,17 @@
 
 .carousel-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 12px;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
+  z-index: 10;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
@@ -61,13 +64,29 @@
   transform: scale(1.2);
 }
 
-/* 🔹 Responsividade */
-@media (max-width: 1023px) {
-  .carousel-container { height: 350px; }
-  .carousel-dots { bottom: 15px; }
+/* 🔹 Tablet */
+@media (max-width: 1024px) {
+  .carousel-container {
+    aspect-ratio: 16 / 7; /* ligeiramente mais alto em tablets */
+  }
+  .carousel-dots {
+    bottom: 10px;
+  }
 }
 
+/* 🔹 Mobile */
 @media (max-width: 600px) {
-  .carousel-container { height: 220px; }
-  .dot { width: 8px; height: 8px; }
+  .carousel-container {
+    aspect-ratio: 16 / 8; /* ainda mais alto em telas pequenas */
+  }
+
+  .carousel-container img {
+    object-fit: contain;
+    background-color: #f4f7ff; /* mantém fundo neutro */
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
 }
