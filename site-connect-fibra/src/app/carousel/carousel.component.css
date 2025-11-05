@@ -4,7 +4,7 @@
   position: relative;
   background-color: transparent;
   animation: fadeIntro 1s ease;
-  margin: 0; /* 🔹 encosta no header */
+  margin: 0;
   padding: 0;
 }
 
@@ -16,29 +16,35 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6; /* 🔹 define proporção equilibrada (ajusta automaticamente a altura) */
+  aspect-ratio: 16 / 6;
 }
 
-.carousel-container img {
+.carousel-container a {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: contain; /* 🔹 mostra a imagem inteira */
-  object-position: center center;
+  cursor: pointer;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  border: none;
-  background-color: #f4f7ff; /* 🔹 evita bordas pretas */
 }
 
-.carousel-container img.active {
+.carousel-container a.active {
   opacity: 1;
   z-index: 1;
 }
 
+.carousel-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  background-color: #f4f7ff;
+}
+
+/* Dots */
 .carousel-dots {
   position: absolute;
   bottom: 12px;
@@ -64,25 +70,20 @@
   transform: scale(1.2);
 }
 
-/* 🔹 Tablet */
+/* Responsividade */
 @media (max-width: 1024px) {
   .carousel-container {
-    aspect-ratio: 16 / 7; /* ligeiramente mais alto em tablets */
-  }
-  .carousel-dots {
-    bottom: 10px;
+    aspect-ratio: 16 / 7;
   }
 }
 
-/* 🔹 Mobile */
 @media (max-width: 600px) {
   .carousel-container {
-    aspect-ratio: 16 / 8; /* ainda mais alto em telas pequenas */
+    aspect-ratio: 16 / 8;
   }
 
   .carousel-container img {
     object-fit: contain;
-    background-color: #f4f7ff; /* mantém fundo neutro */
   }
 
   .dot {

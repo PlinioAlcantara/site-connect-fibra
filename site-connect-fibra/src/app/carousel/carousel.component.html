@@ -1,12 +1,16 @@
 <div class="carousel fade-section">
   <div class="carousel-container">
-    <img
+    <a
       *ngFor="let img of images; let i = index"
-      [src]="img.src"
       [class.active]="i === currentIndex"
-      [style.object-position]="img.position"
-      alt="Banner promocional"
-    />
+      (click)="abrirWhatsApp(img.message)"
+    >
+      <img
+        [src]="img.src"
+        [style.object-position]="img.position"
+        alt="Banner promocional"
+      />
+    </a>
   </div>
 
   <!-- Indicadores -->
