@@ -18,6 +18,11 @@ export class CarouselComponent implements OnInit, OnDestroy {
       message: 'Olá! Gostaria de participar do sorteio da Connect Fibra!'
     },
     {
+      src: 'assets/images/banners/marcação.jpg',
+      position: 'top center',
+      message: 'Oi! Tenho interesse Em assinar o contrato em Marcação!'
+    },
+    {
       src: 'assets/images/banners/banner1.1.jpg',
       position: 'top center',
       message: 'Oi! Tenho interesse na promoção do plano 600 Mega!'
