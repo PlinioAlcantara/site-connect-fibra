@@ -7,22 +7,76 @@
     <div class="menu-icon" (click)="toggleMenu()">
       <i [class]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
     </div>
-   
+
     <ul class="nav-links" [class.active]="isMenuOpen">
       <li><a href="#" (click)="scrollToSection('home'); closeMenu()">Home</a></li>
-      <li><a href="#section3" (click)="scrollToSection('section3'); closeMenu()">Motivos</a></li>
-      <li><a href="#section2" (click)="scrollToSection('section2'); closeMenu()">Planos</a></li>
-      <li><a href="#section4" (click)="scrollToSection('section4'); closeMenu()">Contato</a></li>
+      <li><a href="#" (click)="scrollToSection('section3'); closeMenu()">Motivos</a></li>
+      <li><a href="#" (click)="scrollToSection('section2'); closeMenu()">Planos</a></li>
+      <li><a href="#" (click)="scrollToSection('section4'); closeMenu()">Contato</a></li>
+
       <li>
-        <a href="assets/docs/CONTRATO_CONNECT.pdf" target="_blank" download>
+        <a href="#"
+           (click)="openModal(); closeMenu()"
+           role="button"
+           [attr.aria-haspopup]="'dialog'"
+           [attr.aria-expanded]="isModalOpen">
           Contrato de Prestação de Serviço
         </a>
       </li>
+
       <li>
-        <a href="https://api.connectcomercio.hubsoft.com.br/" target="_blank" class="btn-central" (click)="closeMenu()">
+        <a href="https://api.connectcomercio.hubsoft.com.br/"
+           target="_blank"
+           class="btn-central"
+           (click)="closeMenu()">
           Central do Cliente
         </a>
       </li>
     </ul>
   </nav>
 </header>
+
+<div class="modal-overlay"
+     [class.active]="isModalOpen"
+     (click)="closeModal()">
+</div>
+
+<div class="modal"
+     [class.active]="isModalOpen"
+     role="dialog"
+     aria-modal="true">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <div class="modal-header">
+      <h3>Selecione o contrato</h3>
+      <button class="modal-close" (click)="closeModal()" aria-label="Fechar modal">
+        &times;
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p>Escolha qual documento deseja abrir:</p>
+
+      <div class="modal-actions">
+
+        <a class="doc-btn"
+           href="assets/docs/CONTRATO_CONNECT.pdf"
+           target="_blank"
+           download
+           (click)="closeModal()">
+          📄 Contrato de Prestação de Serviço
+        </a>
+
+        <a class="doc-btn"
+           href="assets/docs/CONTRATO_RASTREAMENTO.pdf"
+           target="_blank"
+           download
+           (click)="closeModal()">
+          📄 Contrato de Rastreamento Veicular
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>
