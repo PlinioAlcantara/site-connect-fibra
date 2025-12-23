@@ -9,16 +9,40 @@
     </div>
 
     <ul class="nav-links" [class.active]="isMenuOpen">
-      <li><a href="#" (click)="scrollToSection('home'); closeMenu()">Home</a></li>
-      <li><a href="#" (click)="scrollToSection('section3'); closeMenu()">Motivos</a></li>
-      <li><a href="#" (click)="scrollToSection('section2'); closeMenu()">Planos</a></li>
-      <li><a href="#" (click)="scrollToSection('section4'); closeMenu()">Contato</a></li>
+
+      <li>
+        <a href
+           (click)="onNavClick($event, 'home')">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href
+           (click)="onNavClick($event, 'section3')">
+          Motivos
+        </a>
+      </li>
+
+      <li>
+        <a href
+           (click)="onNavClick($event, 'section2')">
+          Planos
+        </a>
+      </li>
+
+      <li>
+        <a href
+           (click)="onNavClick($event, 'section4')">
+          Contato
+        </a>
+      </li>
 
       <li>
         <a href="#"
            (click)="openModal(); closeMenu()"
            role="button"
-           [attr.aria-haspopup]="'dialog'"
+           aria-haspopup="dialog"
            [attr.aria-expanded]="isModalOpen">
           Contrato de Prestação de Serviço
         </a>
@@ -32,10 +56,12 @@
           Central do Cliente
         </a>
       </li>
+
     </ul>
   </nav>
 </header>
 
+<!-- MODAL -->
 <div class="modal-overlay"
      [class.active]="isModalOpen"
      (click)="closeModal()">
@@ -49,7 +75,9 @@
 
     <div class="modal-header">
       <h3>Selecione o contrato</h3>
-      <button class="modal-close" (click)="closeModal()" aria-label="Fechar modal">
+      <button class="modal-close"
+              (click)="closeModal()"
+              aria-label="Fechar modal">
         &times;
       </button>
     </div>

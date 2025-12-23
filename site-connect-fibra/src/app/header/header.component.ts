@@ -6,6 +6,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
   isMenuOpen = false;
   isModalOpen = false;
 
@@ -17,7 +18,9 @@ export class HeaderComponent {
     this.isMenuOpen = false;
   }
 
-  scrollToSection(sectionId: string) {
+  onNavClick(event: Event, sectionId: string) {
+    event.preventDefault(); // 🔥 impede o pulo para o topo
+
     this.closeMenu();
 
     if (sectionId.toLowerCase() === 'home') {
@@ -27,9 +30,10 @@ export class HeaderComponent {
 
     const target = document.getElementById(sectionId);
     if (target) {
-      const yOffset = -70;
-      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }
 
@@ -43,7 +47,6 @@ export class HeaderComponent {
     document.body.style.overflow = '';
   }
 
-  
   download(filename: string) {
     const link = document.createElement('a');
     link.href = `assets/docs/${filename}`;
@@ -55,7 +58,6 @@ export class HeaderComponent {
     this.closeModal();
   }
 
-  // fechar modal com ESC
   @HostListener('window:keydown.esc')
   onEsc() {
     if (this.isModalOpen) this.closeModal();

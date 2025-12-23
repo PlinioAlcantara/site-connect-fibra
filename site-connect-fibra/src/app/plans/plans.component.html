@@ -1,19 +1,34 @@
 <section id="section2" class="fade-section">
+
   <h2>Nossos Planos</h2>
-  <div class="plans">
-    <!-- 🔹 PLANO 600 MEGA -->
+
+  <div class="plan-toggle">
+    <button 
+      [class.active]="tipoPlano === 'residencial'" 
+      (click)="selecionarPlano('residencial')">
+      Planos Residenciais
+    </button>
+
+    <button 
+      [class.active]="tipoPlano === 'empresarial'" 
+      (click)="selecionarPlano('empresarial')">
+      Planos Empresariais
+    </button>
+  </div>
+
+  <!--RESIDENCIAL-->   
+  <div class="plans" *ngIf="tipoPlano === 'residencial'">
+
     <div class="plan" #planCard>
       <div class="plan-content">
         <h3>600 MEGA</h3>
         <p class="beneficio">+ PONTO SMART</p>
-        <p class="assinatura">Assinaturas inclusas:</p>
         <ul>
           <li>mediQuo</li>
           <li>Watch Free</li>
           <li>Awdio</li>
         </ul>
       </div>
-
       <div class="plan-footer">
         <p class="preco">R$ 89,90/mês</p>
         <button (click)="abrirWhatsApp('600 MEGA')">
@@ -22,21 +37,18 @@
       </div>
     </div>
 
-    <!-- 🔹 PLANO 800 MEGA -->
     <div class="plan" #planCard>
       <div class="plan-content">
         <h3>800 MEGA</h3>
         <p class="beneficio">+ PONTO SMART</p>
-        <p class="assinatura">Assinaturas inclusas:</p>
         <ul>
           <li>Clube de Revistas</li>
-          <li>Coquetel</li>
           <li>Watch TV</li>
-          <li>Paramount+</li>
-          <li>mediQuo</li>
+          <li>Coquetel</li>
+          <li>MediQuo</li>
+          <li>Awdio</li>
         </ul>
       </div>
-
       <div class="plan-footer">
         <p class="preco">R$ 99,90/mês</p>
         <button (click)="abrirWhatsApp('800 MEGA')">
@@ -45,21 +57,18 @@
       </div>
     </div>
 
-    <!-- 🔹 PLANO 1 GIGA -->
     <div class="plan destaque" #planCard>
       <div class="plan-content">
         <h3>1 GIGA</h3>
         <p class="beneficio">ROTEADOR MESH + PONTO SMART</p>
-        <p class="assinatura">Assinaturas inclusas:</p>
         <ul>
           <li>TocaLivros</li>
-          <li>Coquetel</li>
           <li>Watch TV</li>
-          <li>Paramount+</li>
-          <li>mediQuo</li>
+          <li>Coquetel</li>
+          <li>MediQuo</li>
+          <li>Awdio</li>
         </ul>
       </div>
-
       <div class="plan-footer">
         <p class="preco">R$ 149,90/mês</p>
         <button (click)="abrirWhatsApp('1 GIGA')">
@@ -68,4 +77,62 @@
       </div>
     </div>
   </div>
+
+  <!--EMPRESARIAL-->
+  <div class="plans" *ngIf="tipoPlano === 'empresarial'">
+
+    <div class="plan" #planCard>
+      <div class="plan-content">
+        <h3>250 MBPS</h3>
+        <p class="beneficio">Plano Empresarial</p>
+        <ul>
+          <li>IP Fixo</li>
+          <li>70% Upload</li>
+        </ul>
+      </div>
+      <div class="plan-footer">
+        <p class="preco">R$ 150,00/mês</p>
+        <button (click)="abrirWhatsApp('250 MBPS Empresarial')">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </button>
+      </div>
+    </div>
+
+    <div class="plan" #planCard>
+      <div class="plan-content">
+        <h3>350 MBPS</h3>
+        <p class="beneficio">Plano Empresarial</p>
+        <ul>
+          <li>IP Fixo</li>
+          <li>70% Upload</li>
+          <li>Roteador adicional</li>
+        </ul>
+      </div>
+      <div class="plan-footer">
+        <p class="preco">R$ 250,00/mês</p>
+        <button (click)="abrirWhatsApp('350 MBPS Empresarial')">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </button>
+      </div>
+    </div>
+
+    <div class="plan destaque" #planCard>
+      <div class="plan-content">
+        <h3>650 MBPS</h3>
+        <p class="beneficio">Plano Empresarial</p>
+        <ul>
+          <li>IP Fixo</li>
+          <li>70% Upload</li>
+          <li>Roteador adicional</li>
+        </ul>
+      </div>
+      <div class="plan-footer">
+        <p class="preco">R$ 350,00/mês</p>
+        <button (click)="abrirWhatsApp('650 MBPS Empresarial')">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </button>
+      </div>
+    </div>
+  </div>
+
 </section>

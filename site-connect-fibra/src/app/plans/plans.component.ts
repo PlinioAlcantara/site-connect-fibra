@@ -6,18 +6,28 @@ import { Component, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@
   styleUrls: ['./plans.component.css']
 })
 export class PlansComponent implements AfterViewInit {
+
+  tipoPlano: 'residencial' | 'empresarial' = 'residencial';
+
   @ViewChildren('planCard') planCards!: QueryList<ElementRef>;
 
+  selecionarPlano(tipo: 'residencial' | 'empresarial') {
+    this.tipoPlano = tipo;
+    setTimeout(() => this.observarAnimacoes(), 50);
+  }
+
   ngAfterViewInit() {
+    this.observarAnimacoes();
+  }
+
+  observarAnimacoes() {
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         entries.forEach(entry => {
-          const element = entry.target as HTMLElement;
-          if (entry.isIntersecting) {
-            element.classList.add('animate');
-          } else {
-            element.classList.remove('animate');
-          }
+          const el = entry.target as HTMLElement;
+          entry.isIntersecting
+            ? el.classList.add('animate')
+            : el.classList.remove('animate');
         });
       },
       { threshold: 0.3 }
@@ -27,11 +37,9 @@ export class PlansComponent implements AfterViewInit {
   }
 
   abrirWhatsApp(plano: string) {
-  const numero = '5583991616542';
-  const mensagem = `Olá! Gostaria de contratar o plano ${plano} da Connect Fibra.`;
-  const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
-
-  // redireciona diretamente para o chat
-  window.location.href = url;
-}
+    const numero = '5583991616542';
+    const mensagem = `Olá! Gostaria de contratar o plano ${plano} da Connect Fibra.`;
+    const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+    window.location.href = url;
+  }
 }
