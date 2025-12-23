@@ -1,0 +1,20 @@
+<section id="section5" class="fade-section faq-section">
+  <h2>Dúvidas Frequentes</h2>
+
+  <div class="faq-container">
+
+    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+      <button class="faq-question"
+              (click)="toggleFaq(i)"
+              [class.active]="faq.aberta">
+        {{ faq.pergunta }}
+        <span class="icon">{{ faq.aberta ? '−' : '+' }}</span>
+      </button>
+
+      <div class="faq-answer" [class.open]="faq.aberta">
+        <p>{{ faq.resposta }}</p>
+      </div>
+    </div>
+
+  </div>
+</section>

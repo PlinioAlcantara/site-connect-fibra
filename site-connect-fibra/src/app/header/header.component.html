@@ -9,75 +9,67 @@
     </div>
 
     <ul class="nav-links" [class.active]="isMenuOpen">
-
       <li>
-        <a href
-           (click)="onNavClick($event, 'home')">
-          Home
-        </a>
+        <a href (click)="onNavClick($event, 'home')"> Home </a>
       </li>
 
       <li>
-        <a href
-           (click)="onNavClick($event, 'section3')">
-          Motivos
-        </a>
+        <a href (click)="onNavClick($event, 'section3')"> Motivos </a>
       </li>
 
       <li>
-        <a href
-           (click)="onNavClick($event, 'section2')">
-          Planos
-        </a>
+        <a href (click)="onNavClick($event, 'section2')"> Planos </a>
       </li>
 
       <li>
-        <a href
-           (click)="onNavClick($event, 'section4')">
-          Contato
-        </a>
+        <a href (click)="onNavClick($event, 'section5')">Dúvidas</a>
+      </li>
+      <li>
+        <a href (click)="onNavClick($event, 'section4')"> Contato </a>
       </li>
 
       <li>
-        <a href="#"
-           (click)="openModal(); closeMenu()"
-           role="button"
-           aria-haspopup="dialog"
-           [attr.aria-expanded]="isModalOpen">
+        <a
+          href="#"
+          (click)="openModal(); closeMenu()"
+          role="button"
+          aria-haspopup="dialog"
+          [attr.aria-expanded]="isModalOpen"
+        >
           Contrato de Prestação de Serviço
         </a>
       </li>
 
       <li>
-        <a href="https://api.connectcomercio.hubsoft.com.br/"
-           target="_blank"
-           class="btn-central"
-           (click)="closeMenu()">
+        <a
+          href="https://api.connectcomercio.hubsoft.com.br/"
+          target="_blank"
+          class="btn-central"
+          (click)="closeMenu()"
+        >
           Central do Cliente
         </a>
       </li>
-
     </ul>
   </nav>
 </header>
 
 <!-- MODAL -->
-<div class="modal-overlay"
-     [class.active]="isModalOpen"
-     (click)="closeModal()">
-</div>
+<div
+  class="modal-overlay"
+  [class.active]="isModalOpen"
+  (click)="closeModal()"
+></div>
 
-<div class="modal"
-     [class.active]="isModalOpen"
-     role="dialog"
-     aria-modal="true">
+<div class="modal" [class.active]="isModalOpen" role="dialog" aria-modal="true">
   <div class="modal-content" (click)="$event.stopPropagation()">
-
     <div class="modal-header">
       <h3>Selecione o contrato</h3>
-      <button class="modal-close"
-              (click)="closeModal()"
-              aria-label="Fechar modal">
+      <button
+        class="modal-close"
+        (click)="closeModal()"
+        aria-label="Fechar modal"
+      >
         &times;
       </button>
     </div>
@@ -86,25 +78,26 @@
       <p>Escolha qual documento deseja abrir:</p>
 
       <div class="modal-actions">
-
-        <a class="doc-btn"
-           href="assets/docs/CONTRATO_CONNECT.pdf"
-           target="_blank"
-           download
-           (click)="closeModal()">
+        <a
+          class="doc-btn"
+          href="assets/docs/CONTRATO_CONNECT.pdf"
+          target="_blank"
+          download
+          (click)="closeModal()"
+        >
           📄 Contrato de Prestação de Serviço
         </a>
 
-        <a class="doc-btn"
-           href="assets/docs/CONTRATO_RASTREAMENTO.pdf"
-           target="_blank"
-           download
-           (click)="closeModal()">
+        <a
+          class="doc-btn"
+          href="assets/docs/CONTRATO_RASTREAMENTO.pdf"
+          target="_blank"
+          download
+          (click)="closeModal()"
+        >
           📄 Contrato de Rastreamento Veicular
         </a>
-
       </div>
     </div>
-
   </div>
 </div>
