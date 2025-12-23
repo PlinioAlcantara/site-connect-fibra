@@ -8,8 +8,6 @@
   background-color: var(--color-primary);
   position: relative;
   z-index: 1;
-
-  /* corrige vazamento visual da seção anterior */
   margin-top: -80px;
   padding-top: 120px;
 }
