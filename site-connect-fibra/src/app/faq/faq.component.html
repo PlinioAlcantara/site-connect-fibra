@@ -4,15 +4,31 @@
   <div class="faq-container">
 
     <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+
       <button class="faq-question"
-              (click)="toggleFaq(i)"
-              [class.active]="faq.aberta">
+              (click)="toggleFaq(i)">
         {{ faq.pergunta }}
         <span class="icon">{{ faq.aberta ? '−' : '+' }}</span>
       </button>
 
       <div class="faq-answer" [class.open]="faq.aberta">
-        <p>{{ faq.resposta }}</p>
+
+        <!-- RESPOSTAS PADRÃO -->
+        <p *ngIf="faq.tipo !== 'localizacao'">
+          {{ faq.resposta }}
+        </p>
+
+        <!-- LOCALIZAÇÃO -->
+        <div *ngIf="faq.tipo === 'localizacao'" class="location-options">
+          <p>Escolha a unidade que deseja visitar:</p>
+
+          <button *ngFor="let ag of agencias"
+                  (click)="abrirMapa(ag.endereco)">
+            <strong>{{ ag.cidade }}</strong>
+            <span>{{ ag.endereco }}</span>
+          </button>
+        </div>
+
       </div>
     </div>
 
