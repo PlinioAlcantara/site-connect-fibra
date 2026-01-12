@@ -8,9 +8,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class CarouselComponent implements OnInit, OnDestroy {
   images: { src: string; position: string; message: string }[] = [
     {
-      src: 'assets/images/banners/sorteio.jpg',
+      src: 'assets/images/banners/site banner.jpg',
       position: 'top center',
-      message: 'Olá! Gostaria de participar do sorteio da Connect Fibra!'
+      message: 'Olá! Gostaria de participar da promoção de verão da Connect Fibra!'
     },
     {
       src: 'assets/images/banners/marcação.jpg',

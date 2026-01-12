@@ -43,6 +43,10 @@ export class FaqComponent {
     {
       cidade: 'Mataraca',
       endereco: 'PB-065 - Mataraca, PB, 58292-000'
+    },
+    {
+      cidade: 'Marcação',
+      endereco: 'PB-041 - Marcação, PB, 58294-000'
     }
   ];
 
