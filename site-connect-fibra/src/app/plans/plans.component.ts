@@ -7,11 +7,11 @@ import { Component, AfterViewInit, ElementRef, QueryList, ViewChildren } from '@
 })
 export class PlansComponent implements AfterViewInit {
 
-  tipoPlano: 'residencial' | 'empresarial' = 'residencial';
+  tipoPlano: 'GPS' | 'residencial' | 'empresarial' = 'residencial';
 
   @ViewChildren('planCard') planCards!: QueryList<ElementRef>;
 
-  selecionarPlano(tipo: 'residencial' | 'empresarial') {
+  selecionarPlano(tipo: 'residencial' | 'empresarial' | 'GPS' ) {
     this.tipoPlano = tipo;
     setTimeout(() => this.observarAnimacoes(), 50);
   }

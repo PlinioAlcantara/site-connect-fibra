@@ -14,6 +14,12 @@
       (click)="selecionarPlano('empresarial')">
       Planos Empresariais
     </button>
+
+     <button 
+      [class.active]="tipoPlano === 'GPS'" 
+      (click)="selecionarPlano('GPS')">
+      Planos de GPS
+    </button>
   </div>
 
   <!--RESIDENCIAL-->   
@@ -133,6 +139,57 @@
         </button>
       </div>
     </div>
+  </div>
+<!--GPS-->
+  <div class="plans" *ngIf="tipoPlano === 'GPS'">
+
+    <div class="plan" #planCard>
+      <div class="plan-content">
+        <h3>GPS Connect</h3>
+        <p class="beneficio">Exclusivo para CARRO/MOTO</p>
+        <ul>
+          <li>Bloqueio do veiculo em caso de roubo</li>
+          <li>Acesso pelo aplicativo no celular</li>
+          <li>Histórico de rotas (até 30 dias)</li>
+          <li>Visualização pelo computador</li>
+          <li>Alerta de velocidade</li>
+          <li>Monitoramento 24H</li>
+          <li>Notificação de ignição ligada/desligada</li>
+        </ul>
+      </div>
+      <div class="plan-footer">
+        <p class="preco">R$ 35,90/mês</p>
+        <button (click)="abrirWhatsApp('250 MBPS Empresarial')">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </button>
+      </div>
+    </div>
+
+    <div class="plan" #planCard>
+      <div class="plan-content">
+        <h3>GPS + Proteção Veicular</h3>
+        <p class="beneficio">Exclusivo para CARRO</p>
+        <ul>
+          <li>Bloqueio do veiculo em caso de roubo</li>
+          <li>Histórico de rotas (até 30 dias)</li>
+          <li>Visualização pelo computador</li>
+          <li>Assistência virtual 24h</li>
+          <li>Alerta de velocidade</li>
+          <li>Monitoramento 24H</li>
+          <li>Reboque 100km</li>
+          <li>Borracheiro</li>
+          <li>Chaveiro</li>
+          <li>Notificação de ignição ligada/desligada</li>
+        </ul>
+      </div>
+      <div class="plan-footer">
+        <p class="preco">R$ 49,90/mês</p>
+        <button (click)="abrirWhatsApp('350 MBPS Empresarial')">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </button>
+      </div>
+    </div>
+
   </div>
 
 </section>
